@@ -11,11 +11,17 @@ import {
 } from "@mui/material";
 import { CameraAlt as CameraAltIcon } from "@mui/icons-material";
 import { VisuallyHiddenInput } from "../components/styles/StyledComponents";
+import { useInputValidation } from "6pp";
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   const toggleLogin = () => setIsLogin((prev) => !prev);
+
+  const name = useInputValidation("");
+  const bio = useInputValidation("");
+  const username = useInputValidation("");
+  const password = useInputValidation("");
 
   return (
     <Container
@@ -47,6 +53,8 @@ const Login = () => {
                 label="Username"
                 margin="normal"
                 variant="outlined"
+                value={username.value}
+                onChange={username.changeHandler}
               />
 
               <TextField
@@ -56,6 +64,8 @@ const Login = () => {
                 type="password"
                 margin="normal"
                 variant="outlined"
+                value={password.value}
+                onChange={password.changeHandler}
               />
               <Button
                 sx={{ margnTop: "1rem" }}
@@ -113,6 +123,8 @@ const Login = () => {
                 label="Name"
                 margin="normal"
                 variant="outlined"
+                value={name.value}
+                onChange={name.changeHandler}
               />
 
               <TextField
@@ -121,6 +133,8 @@ const Login = () => {
                 label="Bio"
                 margin="normal"
                 variant="outlined"
+                value={bio.value}
+                onChange={bio.changeHandler}
               />
               <TextField
                 required
@@ -128,6 +142,8 @@ const Login = () => {
                 label="Username"
                 margin="normal"
                 variant="outlined"
+                value={username.value}
+                onChange={username.changeHandler}
               />
 
               <TextField
@@ -137,6 +153,8 @@ const Login = () => {
                 type="password"
                 margin="normal"
                 variant="outlined"
+                value={password.value}
+                onChange={password.changeHandler}
               />
               <Button
                 sx={{ margnTop: "1rem" }}
