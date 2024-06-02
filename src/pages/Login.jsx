@@ -35,6 +35,10 @@ const Login = () => {
   };
 
   return (
+    <div
+    style={{
+      backgroundImage: "linear-gradient(rgb(255 255 209), rgb(249 159 159))",
+    }}>
     <Container
       component={"main"}
       maxWidth="xs"
@@ -213,6 +217,7 @@ const Login = () => {
         )}
       </Paper>
     </Container>
+    </div>
   );
 };
 
